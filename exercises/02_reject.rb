@@ -1,4 +1,11 @@
 def reject(items, &block)
+  results = []
+  items.each do |item|
+    unless block.call(item)
+      results << item
+    end
+  end
+  results
 end
 
 # ------ code above this line ------

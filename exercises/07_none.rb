@@ -1,4 +1,12 @@
-
+def none?(words, &block)
+  result = true
+  words.each do |word|
+    if block.call(word)
+      result = false
+    end
+  end
+  result
+end
 
 # ------ code above this line ------
 

@@ -1,4 +1,24 @@
 def min_by(items, &block)
+    if items.empty?
+      results = nil
+    elsif items[0].is_a? String
+      results = items[0]
+      items.each do |item|
+        if results.length > block.call(item)
+          results = item
+          end
+        end
+    elsif items[0].is_a? Integer
+      results = items[0]
+      items.each do |item|
+        if results > block.call(item)
+          results = item
+          end
+        end
+
+    end
+    results
+
 end
 
 # ------ code above this line ------

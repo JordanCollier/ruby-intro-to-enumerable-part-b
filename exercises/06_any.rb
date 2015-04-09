@@ -1,4 +1,12 @@
-
+def any?(words, &block)
+  result = false
+  words.each do |word|
+    if block.call(word)
+      result = true
+    end
+  end
+  result
+end
 
 # ------ code above this line ------
 
