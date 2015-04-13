@@ -1,4 +1,12 @@
-
+def all? (input, &block)
+  result = true
+  input.each do |i|
+    if block.call(i)
+      result = false
+    end
+  end
+  result
+end
 
 # ------ code above this line ------
 
