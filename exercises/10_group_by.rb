@@ -1,12 +1,10 @@
-# def group_by(input, &block)
-#   result = Hash.new {[]}
-#   input.each do |h|
-#     if block.call(h)
-#       result[h[:]] << h
-#     end
-#   end
-#   result
-# end
+def group_by(input, &block)
+  result = Hash.new {[]}
+  input.each do |hsh|
+    result[block.call(hsh)] = result[block.call(hsh)] << hsh
+  end
+  result
+end
 
 # ------ code above this line ------
 
