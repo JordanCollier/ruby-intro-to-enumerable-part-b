@@ -1,4 +1,9 @@
-
+def reduce(coll, acc ,&block)
+  coll.each do |item|
+    acc = block.call(acc, item)
+  end
+  acc
+end
 # ------ code above this line ------
 
 require 'rspec/autorun'
